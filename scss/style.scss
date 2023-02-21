@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+    font-family: arial;
+    
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: minmax(120px, 200px)minmax(240px, 1fr) 80px;
+}
