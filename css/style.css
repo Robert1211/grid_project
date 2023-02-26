@@ -12,12 +12,16 @@ body {
   max-width: 1240px;
   margin: 0 auto;
 }
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(300px, auto) 1fr;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    grid-template-areas: "logotype images" "menu images" "search images" ". images" "contact images" "footerek footerek";
+  }
+}
 
 .logo {
-  grid-template-columns: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: logotype;
   background-color: rgb(193, 60, 60);
   height: 100px;
 }
@@ -27,16 +31,27 @@ body {
   grid-row: 1/2;
   background-color: rgb(31, 31, 171);
 }
+@media (min-width: 1024px) {
+  .search {
+    grid-area: search;
+    min-height: 80px;
+  }
+}
 
 .menu {
   grid-column: -1/-2;
   grid-row: 1;
   background-color: rgb(168, 168, 38);
 }
+@media (min-width: 1024px) {
+  .menu {
+    grid-area: menu;
+    min-height: 300px;
+  }
+}
 
 .gallery {
-  grid-column: 1/-1;
-  grid-row: 2;
+  grid-area: images;
   background-color: rgb(173, 173, 208);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
@@ -56,7 +71,7 @@ body {
 }
 
 .contact {
-  grid-area: 3/1/4/-1;
+  grid-area: contact;
   height: 60px;
   background-color: rgb(137, 194, 137);
 }
@@ -64,5 +79,5 @@ body {
 .footer {
   grid-area: footerek;
   height: 100px;
-  background-color: rgb(67, 61, 61);
+  background-color: rgb(122, 57, 57);
 }/*# sourceMappingURL=style.css.map */
